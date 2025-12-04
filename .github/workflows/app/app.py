@@ -121,8 +121,8 @@ col1, col2 = st.columns(2)
 with col1:
     tenure = st.number_input("Tenure (months)", 0, 120, 24)
     monthly_charges = st.slider("Monthly Charges ($)", 18.0, 130.0, 70.0, 0.5)
-    total_charges = st.number_input("Total Charges ($)", 0.0, 10000.0, 
-                                   value=float(monthly_charges * (tenure + monthly_charges), step=0.1))
+    total_charges = st.number_input("Total Charges ($)", 0.0, 10000.0,
+                                value=float(monthly_charges * tenure))
 
     contract = st.selectbox("Contract", ["Month-to-month", "One year", "Two year"])
     payment_method = st.selectbox("Payment Method", 
@@ -205,5 +205,6 @@ if st.button("🎯 Predict Churn Risk", type="primary"):
 
 
 st.caption("Built by [Adrian Juravlea] – production-grade code, profit-driven ML")
+
 
 
