@@ -24,7 +24,7 @@ warnings.filterwarnings('ignore')
 # ========================================
 @st.cache_data
 def load_and_prepare_data():
-    df = pd.read_csv('../data/telco_churn.csv')
+    df = pd.read_csv('.github/workflows/data/telco_churn.csv')
     
     # Clean TotalCharges
     df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
@@ -205,4 +205,5 @@ if st.button("🎯 Predict Churn Risk", type="primary"):
 
 
 st.caption("Built by [Adrian Juravlea] – production-grade code, profit-driven ML")
+
 
