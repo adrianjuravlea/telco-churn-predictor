@@ -28,7 +28,8 @@ jobs:
       run: |
         python -c "
 import pandas as pd
-df = pd.read_csv('data/telco_churn.csv')
+# 🚨 FIX: Using the correct path relative to the repository root
+df = pd.read_csv('.github/workflows/data/telco_churn.csv') 
 print(f'Dataset loaded successfully: {len(df)} rows')
 assert len(df) == 7043, 'Wrong dataset size'
 print('✅ All tests passed!')
