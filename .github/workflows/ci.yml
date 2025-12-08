@@ -1,0 +1,40 @@
+name: CI for Telco Churn Predictor
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Check if app starts (sanity check)
+      run: |
+        python -c "
+import pandas as pd
+from app.app import load_and_prepare_data  # import funcția ta
+df = load_and_prepare_data()
+assert len(df) == 7043, 'Dataset size wrong'
+print('All tests passed! Dataset loaded correctly.')
+"
+
+    - name: Lint with flake8 (optional but looks pro)
+      run: |
+        pip install flake8
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
