@@ -1,3 +1,6 @@
+[![CI Status](https://github.com/adrianjuravlea/telco-churn-predictor/actions/workflows/ci.yml/badge.svg)](https://github.com/adrianjuravlea/telco-churn-predictor/actions/workflows/ci.yml)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://telco-churn-predictor-z9qnp8jjsxkpwt6jrm6vzi.streamlit.app/)
+
 # Telco Customer Churn Prediction & Retention Strategy
 
 **Business problem**: Telecom companies lose millions annually due to customer churn. Most retention campaigns are sent blindly, wasting marketing budget.
@@ -16,4 +19,5 @@
 
 [▶️ Live Demo (Streamlit)](https://telco-churn-predictor-z9qnp8jjsxkpwt6jrm6vzi.streamlit.app/)  
 [📊 Jupyter Notebook](notebook/Telco_Churn_Analysis.ipynb)  
+
 [🚀 Streamlit App Code](app/app.py)
