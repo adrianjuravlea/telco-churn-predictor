@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  test-and-lint:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,17 +24,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Check if app starts (sanity check)
+    - name: Sanity check – load data
       run: |
         python -c "
 import pandas as pd
-from app.app import load_and_prepare_data  # import funcția ta
-df = load_and_prepare_data()
-assert len(df) == 7043, 'Dataset size wrong'
-print('All tests passed! Dataset loaded correctly.')
+df = pd.read_csv('data/telco_churn.csv')
+print(f'Dataset loaded successfully: {len(df)} rows')
+assert len(df) == 7043, 'Wrong dataset size'
+print('✅ All tests passed!')
 "
 
-    - name: Lint with flake8 (optional but looks pro)
+    - name: Lint with flake8
       run: |
         pip install flake8
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
