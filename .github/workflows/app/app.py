@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Dec  4 09:48:22 2025
+Created on Thu Dec 4 2025
 
 @author: Adrian.Juravlea
 """
@@ -205,6 +205,7 @@ if st.button("🎯 Predict Churn Risk", type="primary"):
 
 
 st.caption("Built by [Adrian Juravlea] – production-grade code, profit-driven ML")
+
 
 
 
